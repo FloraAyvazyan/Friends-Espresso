@@ -13,6 +13,7 @@ object ClickItemsPageSteps {
     fun pageIsDisplayed(){
         assertTrue(imgItem.isViewDisplayed())
     }
+
     fun clickOnButtons(buttons: List<Matcher<View>>) {
         buttons.forEach { button ->
             button.tap()
