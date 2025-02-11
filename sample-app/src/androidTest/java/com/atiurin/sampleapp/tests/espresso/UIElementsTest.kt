@@ -27,7 +27,7 @@ class UIElementsTest : MyBaseTest() {
                 validateEnableButton()
                 validateClickableButton()
                 clickOnInvisibleButton()
-                validateButton1()
+                validateButton1IsInvisible()
             }
         }
     }
@@ -47,6 +47,8 @@ class UIElementsTest : MyBaseTest() {
                 validateSimpleButtonOpened()
                 clickOnSimpleButton(CLICK)
                 validateCount(CLICK)
+                clickOnRadioGone()
+                validateSimpleButtonGone()
             }
         }
     }

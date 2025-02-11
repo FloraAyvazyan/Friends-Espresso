@@ -13,6 +13,7 @@ object UIElementPage {
     val invisible_button: Matcher<View> by lazy { ViewMatchers.withId(R.id.radio_invisible) }
     val button1: Matcher<View> by lazy { ViewMatchers.withId(R.id.button1) }
     val lastEventStatus: Matcher<View> by lazy { ViewMatchers.withId(R.id.last_event_status) }
+    val radioGone: Matcher<View> by lazy { ViewMatchers.withId(R.id.radio_gone) }
 
 
 }

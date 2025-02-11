@@ -1,7 +1,9 @@
 package com.atiurin.sampleapp.steps
 
+import com.atiurin.sampleapp.helper.assertIsNotViewDisplayed
 import com.atiurin.sampleapp.helper.isViewDisplayed
 import com.atiurin.sampleapp.pages.UIElementPage
+import com.atiurin.sampleapp.pages.UIElementPage.button1
 import com.atiurin.sampleapp.pages.UiElementsPage
 import com.atiurin.ultron.extensions.isDisplayed
 import com.atiurin.ultron.extensions.isNotDisplayed
@@ -43,7 +45,7 @@ object UIElementPageSteps {
         }
     }
 
-    fun validateButton1(){
+    fun validateButton1IsInvisible(){
         with(UIElementPage){
             button1.isNotDisplayed()
         }
@@ -52,7 +54,7 @@ object UIElementPageSteps {
 
     fun validateSimpleButtonOpened() {
         with(UiElementsPage) {
-            button.isDisplayed()
+            button1.isDisplayed()
         }
     }
 
@@ -67,6 +69,18 @@ object UIElementPageSteps {
     fun validateCount(int: Int) {
         with(UIElementPage) {
                 lastEventStatus.textContains("Click " + int)
+        }
+    }
+
+    fun clickOnRadioGone(){
+        with(UIElementPage){
+            radioGone.tap()
+        }
+    }
+
+    fun validateSimpleButtonGone() {
+        with(UiElementsPage) {
+            button1.isNotDisplayed()
         }
     }
 }
