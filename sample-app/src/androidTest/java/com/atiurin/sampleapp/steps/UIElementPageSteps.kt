@@ -1,6 +1,5 @@
 package com.atiurin.sampleapp.steps
 
-import com.atiurin.sampleapp.helper.assertIsNotViewDisplayed
 import com.atiurin.sampleapp.helper.isViewDisplayed
 import com.atiurin.sampleapp.pages.UIElementPage
 import com.atiurin.sampleapp.pages.UIElementPage.button1
@@ -13,43 +12,43 @@ import com.atiurin.ultron.extensions.textContains
 import org.junit.Assert.assertTrue
 
 object UIElementPageSteps {
-    fun pageIsLoaded(){
-        with(UIElementPage){
-            assertTrue(baseTitle.isViewDisplayed());
+    fun pageIsLoaded() {
+        with(UIElementPage) {
+            assertTrue(baseTitle.isViewDisplayed())
         }
     }
-    fun unmarkEnableButton(){
-        with(UIElementPage){
+    fun unmarkEnableButton() {
+        with(UIElementPage) {
             unmarkCheckboxEnable.tap()
         }
     }
-    fun unmarkClickableButton(){
-        with(UIElementPage){
+    fun unmarkClickableButton() {
+        with(UIElementPage) {
             checkboxClickableButton.tap()
         }
     }
-    fun validateEnableButton(){
-        with(UIElementPage){
+    fun validateEnableButton() {
+        with(UIElementPage) {
             unmarkCheckboxEnable.isNotSelected()
         }
     }
 
-    fun validateClickableButton(){
-        with(UIElementPage){
+    fun validateClickableButton() {
+        with(UIElementPage) {
             checkboxClickableButton.isNotSelected()
         }
     }
-    fun clickOnInvisibleButton(){
-        with(UIElementPage){
+
+    fun clickOnInvisibleButton() {
+        with(UIElementPage) {
             invisible_button.tap()
         }
     }
 
-    fun validateButton1IsInvisible(){
-        with(UIElementPage){
+    fun validateButton1IsInvisible() {
+        with(UIElementPage) {
             button1.isNotDisplayed()
         }
-
     }
 
     fun validateSimpleButtonOpened() {
@@ -68,12 +67,12 @@ object UIElementPageSteps {
 
     fun validateCount(int: Int) {
         with(UIElementPage) {
-                lastEventStatus.textContains("Click " + int)
+            lastEventStatus.textContains("Click " + int)
         }
     }
 
-    fun clickOnRadioGone(){
-        with(UIElementPage){
+    fun clickOnRadioGone() {
+        with(UIElementPage) {
             radioGone.tap()
         }
     }

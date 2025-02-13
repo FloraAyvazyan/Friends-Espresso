@@ -6,7 +6,7 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 object MenuPage {
-    fun returnItem(item: String) : Matcher<View> {
+    fun returnItem(item: String): Matcher<View> {
         val menuItem: Matcher<View> by lazy {
             Matchers.allOf(
                 ViewMatchers.withId(com.google.android.material.R.id.design_menu_item_text),

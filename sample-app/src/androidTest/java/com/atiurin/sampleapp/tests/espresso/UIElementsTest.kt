@@ -7,7 +7,6 @@ import com.atiurin.sampleapp.steps.UIElementPageSteps
 import com.atiurin.sampleapp.tests.MyBaseTest
 import org.junit.Test
 
-
 class UIElementsTest : MyBaseTest() {
 
     @Test
@@ -52,6 +51,4 @@ class UIElementsTest : MyBaseTest() {
             }
         }
     }
-
-
 }

@@ -5,17 +5,34 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import com.atiurin.sampleapp.R
 import com.atiurin.sampleapp.data.Constants
+import com.atiurin.sampleapp.pages.FriendsListPage.recycler
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 object MainPage {
     val dashboard: Matcher<View> by lazy { ViewMatchers.withId(R.id.recycler_friends) }
     val menuButton: Matcher<View> by lazy { withContentDescription(Constants.MENU) }
-    fun returnFriendChat(friendName: String) : Matcher<View> {
-        val friend: Matcher<View> by lazy { Matchers.allOf(
-            ViewMatchers.withId(R.id.tv_name),
-            ViewMatchers.withText(friendName))
+
+    fun returnFriendChat(friendName: String): Matcher<View> {
+        val friend: Matcher<View> by lazy {
+            Matchers.allOf(
+                ViewMatchers.withId(R.id.tv_name),
+                ViewMatchers.withText(friendName)
+            )
         }
         return friend
+    }
+
+    fun returnFriend(friendName: String): FriendsListPage.FriendRecyclerItem {
+        with(MainPage) {
+            return recycler.getItem(
+                ViewMatchers.hasDescendant(
+                    Matchers.allOf(
+                        ViewMatchers.withText(friendName),
+                        ViewMatchers.withId(R.id.tv_name)
+                    )
+                )
+            )
+        }
     }
 }
